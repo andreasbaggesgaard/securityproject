@@ -1,0 +1,20 @@
+﻿@model MVCSql.Models.PersonModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("LoginPerson", "SQL", FormMethod.Post))
+{
+    <label>Username</label>
+    @Html.TextBoxFor(model => model.username)<br /><br />
+    <label>Password</label>
+    @Html.TextBoxFor(model => model.password)<br /><br />
+    <button type="submit">Login</button><br />
+    @Html.ValidationMessageFor(model => model.username)<br />
+    @Html.ValidationMessageFor(model => model.password)<br />
+    @ViewBag.Message
+}
+

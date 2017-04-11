@@ -1,0 +1,21 @@
+﻿@model MVCSql.Models.PersonModel
+@using System.Web.Mvc
+
+@{
+    ViewBag.Title = "CreatePerson";
+}
+
+<h2>CreatePerson</h2>
+
+@using (Html.BeginForm("CreatePerson", "SQL", FormMethod.Post))
+{
+    <label>Username</label>
+    @Html.TextBoxFor(model => model.username)<br /><br />
+    <label>Password</label>
+    @Html.TextBoxFor(model => model.password)<br /><br />
+    <button type="submit">Create person</button><br />
+    @Html.ValidationMessageFor(model => model.username)<br />
+    @Html.ValidationMessageFor(model => model.password)<br />
+    @ViewBag.Message
+}
+

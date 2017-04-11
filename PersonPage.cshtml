@@ -1,0 +1,26 @@
+﻿@model MVCSql.Models.PersonModel
+
+@{
+
+    if (object.ReferenceEquals(Session["user"], null))
+    {
+        <br />
+        <strong> You are not logged in </strong>
+        <br />
+        <br />
+        @Html.ActionLink("Login", "LoginPerson");
+    }   
+    else
+    {
+        <h2> Welcome <strong>@Session["user"]</strong></h2>
+
+        @Html.ActionLink("Logout", "LogoutPerson");
+    }
+
+
+
+}
+
+
+
+
